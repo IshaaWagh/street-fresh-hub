@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom sustainable commerce colors
+				'fresh-green': 'hsl(var(--fresh-green))',
+				'earth-brown': 'hsl(var(--earth-brown))',
+				'warm-orange': 'hsl(var(--warm-orange))',
+				'cream': 'hsl(var(--cream))',
+				'sage': 'hsl(var(--sage))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
