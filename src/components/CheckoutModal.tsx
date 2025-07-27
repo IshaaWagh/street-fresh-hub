@@ -73,6 +73,13 @@ const CheckoutModal = ({ isOpen, onClose, cartItems, totalAmount, onOrderComplet
     return tomorrow.toISOString().split('T')[0];
   };
 
+  // Get maximum delivery date (1 week from today)
+  const getMaxDeliveryDate = () => {
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 7);
+    return maxDate.toISOString().split('T')[0];
+  };
+
   if (orderPlaced) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
@@ -202,12 +209,14 @@ const CheckoutModal = ({ isOpen, onClose, cartItems, totalAmount, onOrderComplet
                   value={formData.deliveryDate}
                   onChange={(e) => handleInputChange("deliveryDate", e.target.value)}
                   min={getTomorrowDate()}
+                  max={getMaxDeliveryDate()}
                 />
               </div>
 
               <div className="bg-gradient-to-r from-cream to-secondary/50 p-3 rounded-lg">
                 <p className="text-sm text-muted-foreground">
                   <strong>Delivery Time:</strong> 6:00 AM - 8:00 AM<br />
+                  <strong>Scheduling:</strong> Order up to 7 days in advance<br />
                   Orders placed before 9:00 PM will be delivered the next day.
                 </p>
               </div>

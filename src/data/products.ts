@@ -47,7 +47,7 @@ export const products: Product[] = [
     category: "dairy",
     price: 60,
     unit: "1L",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg", // Replace with: import milkImage from "@/assets/products/dairy/milk-fresh-whole.jpg"
     description: "Farm-fresh whole milk from local dairy farms",
     inStock: true,
     sustainabilityScore: 85,
