@@ -47,9 +47,9 @@ const Hero = () => {
               Shop Now
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="hero" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
+            {/* <Button variant="outline" size="hero" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
               Learn More
-            </Button>
+            </Button> */}
           </div>
         </div>
         

@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Plus, Minus, Leaf, Clock } from "lucide-react";
 import { Product } from "@/types/product";
-
+import milk from "@/assets/milk.png";
 interface ProductCardProps {
   product: Product;
   quantity: number;
@@ -41,7 +41,7 @@ const ProductCard = ({ product, quantity, onAddToCart, onUpdateQuantity }: Produ
       <CardContent className="p-4">
         <div className="relative mb-4">
           <img 
-            src={product.image} 
+            src={product.image } 
             alt={product.name}
             className="w-full h-48 object-cover rounded-lg bg-muted"
           />

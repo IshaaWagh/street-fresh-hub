@@ -14,11 +14,12 @@ const Navbar = ({ cartItemsCount, onCartClick }: NavbarProps) => {
         <div className="flex items-center gap-2">
           <Leaf className="h-8 w-8 text-fresh-green" />
           <span className="text-xl font-bold bg-gradient-to-r from-fresh-green to-earth-brown bg-clip-text text-transparent">
-            FreshSupply
+            StreetHub
           </span>
         </div>
         
         <div className="flex items-center gap-4">
+    
           <Button variant="ghost" size="sm">
             <User className="h-4 w-4" />
             Login
