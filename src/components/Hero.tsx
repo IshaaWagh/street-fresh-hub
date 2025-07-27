@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Leaf, Truck, Clock } from "lucide-react";
-import heroImage from "@/assets/hero-marketplace.jpg";
+import heroImage from "@/assets/hero-marketplace1.jpg";
 
 const Hero = () => {
   const scrollToProducts = () => {
