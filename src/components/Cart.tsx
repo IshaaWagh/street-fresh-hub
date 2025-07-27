@@ -13,9 +13,10 @@ interface CartProps {
   onUpdateQuantity: (productId: string, quantity: number) => void;
   onRemoveItem: (productId: string) => void;
   onCheckout: () => void;
+  onBulkSchedule: () => void;
 }
 
-const Cart = ({ isOpen, onOpenChange, cartItems, onUpdateQuantity, onRemoveItem, onCheckout }: CartProps) => {
+const Cart = ({ isOpen, onOpenChange, cartItems, onUpdateQuantity, onRemoveItem, onCheckout, onBulkSchedule }: CartProps) => {
   const totalAmount = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
@@ -138,15 +139,27 @@ const Cart = ({ isOpen, onOpenChange, cartItems, onUpdateQuantity, onRemoveItem,
                   </div>
                 </div>
                 
-                <Button 
-                  onClick={onCheckout}
-                  variant="hero"
-                  size="lg"
-                  className="w-full"
-                  disabled={cartItems.length === 0}
-                >
-                  Proceed to Checkout
-                </Button>
+                <div className="space-y-2">
+                  <Button 
+                    onClick={onBulkSchedule}
+                    variant="outline"
+                    size="lg"
+                    className="w-full"
+                    disabled={cartItems.length === 0}
+                  >
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Bulk Schedule (Up to 10 Days)
+                  </Button>
+                  <Button 
+                    onClick={onCheckout}
+                    variant="hero"
+                    size="lg"
+                    className="w-full"
+                    disabled={cartItems.length === 0}
+                  >
+                    Single Order Checkout
+                  </Button>
+                </div>
               </div>
             </>
           )}

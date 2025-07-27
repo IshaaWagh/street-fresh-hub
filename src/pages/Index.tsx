@@ -5,6 +5,7 @@ import CategoryFilter from "@/components/CategoryFilter";
 import ProductCard from "@/components/ProductCard";
 import Cart from "@/components/Cart";
 import CheckoutModal from "@/components/CheckoutModal";
+import BulkScheduleModal from "@/components/BulkScheduleModal";
 import { useCart } from "@/hooks/useCart";
 import { products, categories } from "@/data/products";
 
@@ -12,6 +13,7 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isBulkScheduleOpen, setIsBulkScheduleOpen] = useState(false);
   
   const {
     cartItems,
@@ -46,9 +48,15 @@ const Index = () => {
     setIsCheckoutOpen(true);
   };
 
+  const handleBulkSchedule = () => {
+    setIsCartOpen(false);
+    setIsBulkScheduleOpen(true);
+  };
+
   const handleOrderComplete = () => {
     clearCart();
     setIsCheckoutOpen(false);
+    setIsBulkScheduleOpen(false);
   };
 
   return (
@@ -96,6 +104,7 @@ const Index = () => {
         onUpdateQuantity={updateQuantity}
         onRemoveItem={removeItem}
         onCheckout={handleCheckout}
+        onBulkSchedule={handleBulkSchedule}
       />
 
       <CheckoutModal
@@ -103,6 +112,13 @@ const Index = () => {
         onClose={() => setIsCheckoutOpen(false)}
         cartItems={cartItems}
         totalAmount={getTotalPrice()}
+        onOrderComplete={handleOrderComplete}
+      />
+
+      <BulkScheduleModal
+        isOpen={isBulkScheduleOpen}
+        onClose={() => setIsBulkScheduleOpen(false)}
+        cartItems={cartItems}
         onOrderComplete={handleOrderComplete}
       />
     </div>

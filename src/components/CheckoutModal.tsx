@@ -10,6 +10,11 @@ import { Calendar, CreditCard, MapPin, Phone, User, CheckCircle } from "lucide-r
 import { CartItem } from "@/types/product";
 import { useToast } from "@/hooks/use-toast";
 
+interface DeliverySchedule {
+  date: string;
+  items: CartItem[];
+}
+
 interface CheckoutModalProps {
   isOpen: boolean;
   onClose: () => void;
