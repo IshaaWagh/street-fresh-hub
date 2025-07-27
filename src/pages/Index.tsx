@@ -9,6 +9,7 @@ import BulkScheduleModal from "@/components/BulkScheduleModal";
 import { useCart } from "@/hooks/useCart";
 import { products, categories } from "@/data/products";
 
+
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isCartOpen, setIsCartOpen] = useState(false);

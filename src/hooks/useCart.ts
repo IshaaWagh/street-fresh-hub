@@ -6,7 +6,7 @@ export const useCart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const { toast } = useToast();
 
-  // Load cart from localStorage on mount
+
   useEffect(() => {
     const savedCart = localStorage.getItem("freshsupply-cart");
     if (savedCart) {

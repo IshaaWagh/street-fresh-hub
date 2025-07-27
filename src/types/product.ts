@@ -11,6 +11,7 @@ export interface Product {
   freshnessDays: number;
 }
 
+
 export interface CartItem extends Product {
   quantity: number;
 }

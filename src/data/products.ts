@@ -7,6 +7,7 @@ export const categories: Category[] = [
     icon: "🥛",
     description: "Fresh milk, cheese, yogurt, and dairy products"
   },
+  
   {
     id: "vegetables", 
     name: "Fresh Vegetables",
